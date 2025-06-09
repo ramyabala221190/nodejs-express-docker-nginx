@@ -3,7 +3,7 @@ services:
    docker-node:
      container_name: ${targetEnv}-node-container
      image: ${targetEnv}-node-image
-     env_file: docker/environment/${targetEnv}.env
+     env_file: environment/${targetEnv}.env
      build:
         args:  #these args are available during build time
            - targetEnv=${targetEnv}
@@ -30,7 +30,7 @@ services:
    nginx:
      container_name: nginx-container
      image: nginx-image
-     env_file: docker/environment/${targetEnv}.env
+     env_file: environment/${targetEnv}.env
      build:
        context: ../
        dockerfile: nginx/Dockerfile
