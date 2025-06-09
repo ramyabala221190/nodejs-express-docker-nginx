@@ -1,0 +1,46 @@
+
+services:
+   docker-node:
+     container_name: ${targetEnv}-node-container
+     image: ${targetEnv}-node-image
+     env_file: ${targetEnv}.env
+     build:
+        args:  #these args are available during build time
+           - targetEnv=${targetEnv}
+        context: ../
+        dockerfile: docker/Dockerfile
+     ports:
+       - ${PORT}:${PORT}
+
+   # docker-prod:
+   #   container_name: prod-container
+   #   image: prod-image
+   #   environment:
+   #      - APP_ENV=production
+   #      - NODE_ENV=production
+   #      - PORT=8084
+   #   build:
+   #      args:  #these args are available during build time
+   #         - targetEnv=prod
+   #      context: ../
+   #      dockerfile: docker/Dockerfile
+   #   ports:
+   #     - 8084:8084
+   
+   nginx:
+     container_name: nginx-container
+     image: nginx-image
+     env_file: ${targetEnv}.env
+     build:
+       context: ../
+       dockerfile: nginx/Dockerfile
+     ports:
+       - 8081:8081
+
+#docker compose -f docker/docker-compose.yml up -d --remove-orphans --no-build docker-dev
+#docker compose -f docker/docker-compose.yml build docker-dev
+#docker compose -f docker/docker-compose.yml build docker-prod
+#docker compose -f docker/docker-compose.yml up -d --remove-orphans --no-build docker-prod
+
+
+# To run all services: docker compose -f docker/docker-compose.yml build
