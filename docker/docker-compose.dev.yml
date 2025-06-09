@@ -3,4 +3,8 @@ services:
      ports:
        - 3004:3004
 
+   nginx:
+     ports:
+       - 3006:3006
+
   

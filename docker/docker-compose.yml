@@ -13,16 +13,14 @@ services:
         context: ../
         dockerfile: docker/Dockerfile
 
-   nginx:
-     container_name: nginx-container
-     image: nginx-image
+   docker-nginx:
+     container_name: nginx-${targetEnv}-container
+     image: nginx-${targetEnv}-image
      restart: always
      env_file: environment/${targetEnv}.env
      build:
        context: ../
        dockerfile: nginx/Dockerfile
-     ports:
-       - 8086:8086
 
 #docker compose -f docker/docker-compose.yml up -d --remove-orphans --no-build docker-dev
 #docker compose -f docker/docker-compose.yml build docker-dev
