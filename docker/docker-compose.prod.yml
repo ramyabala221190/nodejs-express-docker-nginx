@@ -3,6 +3,6 @@ services:
      ports:
        - 8084:8084
 
-   nginx:
+   docker-nginx:
      ports:
        - 8086:8086
