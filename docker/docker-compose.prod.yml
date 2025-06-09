@@ -1,0 +1,6 @@
+services:
+   docker-node:
+     ports:
+       - 8084:8084
+
+  

@@ -12,24 +12,7 @@ services:
            - targetEnv=${targetEnv}
         context: ../
         dockerfile: docker/Dockerfile
-     ports:
-       - 3004:3004
 
-   # docker-prod:
-   #   container_name: prod-container
-   #   image: prod-image
-   #   environment:
-   #      - APP_ENV=production
-   #      - NODE_ENV=production
-   #      - PORT=8084
-   #   build:
-   #      args:  #these args are available during build time
-   #         - targetEnv=prod
-   #      context: ../
-   #      dockerfile: docker/Dockerfile
-   #   ports:
-   #     - 8084:8084
-   
    nginx:
      container_name: nginx-container
      image: nginx-image
