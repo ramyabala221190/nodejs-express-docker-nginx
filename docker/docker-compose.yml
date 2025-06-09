@@ -10,7 +10,7 @@ services:
         context: ../
         dockerfile: docker/Dockerfile
      ports:
-       - ${PORT}:${PORT}
+       - 3004:3004
 
    # docker-prod:
    #   container_name: prod-container

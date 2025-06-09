@@ -2,7 +2,7 @@ FROM node:alpine as node
 
 ARG targetEnv
 
-WORKDIR /var/${targetEnv}/docker/
+WORKDIR /var/nodeapp/docker/${targetEnv}/
 
 COPY package.json package-lock.json ./
 RUN npm cache clean --force
