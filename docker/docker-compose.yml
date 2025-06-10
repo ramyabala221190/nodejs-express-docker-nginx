@@ -1,8 +1,8 @@
 
 services:
    docker-node:
-     container_name: ${targetEnv}-node-container
-     image: ${targetEnv}-node-image
+     container_name: node-${targetEnv}-container
+     image: node-${targetEnv}-image
      restart: always
      depends_on:
       - docker-nginx
@@ -14,8 +14,8 @@ services:
         dockerfile: docker/Dockerfile
 
    docker-nginx:
-     container_name: nginx-${targetEnv}-container
-     image: nginx-${targetEnv}-image
+     container_name: nginx-container
+     image: nginx-image
      restart: always
      env_file: environment/${targetEnv}.env
      build:
