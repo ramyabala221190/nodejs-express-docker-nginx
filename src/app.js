@@ -7,5 +7,5 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(process.env.APP_PORT,()=>{
-    console.log(`server listening on ${process.env.APP_PORT}`)
+    console.log(`Node Express app listening on ${process.env.APP_PORT}`)
 })
