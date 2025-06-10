@@ -9,14 +9,12 @@ It must also allow 3004(dev),8084(prod) and 8086,3006(nginx) for this example.
 
 4. Dev and prod apps will ideally be on different servers.
 Thus there should be no need to maintain different nginx ports.
-Since we are deployig both on the same server, we have different nginx ports.
 
 nginx on port 80/443 on 2 different servers ----> can proxy to the respective node apps.
+
 
 4. Need to learn:
 
 Dynamic ports in docker-compose
 Restarting docker containers on remote server restart.
 Use restart and depends-on in compose
-
-Not disturbing other containers, when deploying a change to a container

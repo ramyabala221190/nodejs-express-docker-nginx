@@ -2,9 +2,4 @@ services:
    docker-node:
      ports:
        - 3004:3004
-
-   docker-nginx:
-     ports:
-       - 3006:3006
-
   
