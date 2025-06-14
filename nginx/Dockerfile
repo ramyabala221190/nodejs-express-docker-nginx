@@ -1,3 +1,5 @@
 FROM nginx:alpine
 
-COPY nginx/nginx.config /etc/nginx/templates/default.conf.template
+ARG targetEnv
+
+COPY nginx/nginx-${targetEnv}.config /etc/nginx/templates/default.conf.template
