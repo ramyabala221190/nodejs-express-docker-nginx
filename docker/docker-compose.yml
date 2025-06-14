@@ -27,6 +27,7 @@ services:
        context: ../
        dockerfile: nginx/Dockerfile
      ports:
+       - 443:443
        - 80:80
 
 #docker compose -f docker/docker-compose.yml up -d --remove-orphans --no-build docker-dev
