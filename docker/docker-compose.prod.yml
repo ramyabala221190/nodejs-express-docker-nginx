@@ -1,4 +1,14 @@
 services:
    docker-node:
      ports:
-       - 8084:8084     
+       - 8084:8084    
+
+   docker-nginx:
+      volumes:
+       - /etc/letsencrypt/live/mynodeapp-prod.brazilsouth.cloudapp.azure.com/fullchain.pem:/etc/nginx/ssl/fullchain.pem
+       - /etc/letsencrypt/live/mynodeapp-prod.brazilsouth.cloudapp.azure.com/privkey.pem:/etc/nginx/ssl/privkey.pem
+       - /etc/letsencrypt/options-ssl-nginx.conf:/etc/nginx/ssl/options-ssl-nginx.conf
+       - /etc/letsencrypt/ssl-dhparams.pem:/etc/nginx/ssl/ssl-dhparams.pem 
+      ports:
+       - 443:443
+       - 80:80
