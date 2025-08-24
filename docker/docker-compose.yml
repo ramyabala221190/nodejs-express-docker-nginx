@@ -2,7 +2,6 @@
 services:
    docker-node:
      container_name: node-${targetEnv}-container
-     image: ${DOCKER_HUB_CRED_USR}/${toNodeRepo}:${buildNumber}
      restart: always
      depends_on:
       - docker-nginx

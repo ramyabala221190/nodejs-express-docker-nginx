@@ -1,5 +1,6 @@
 services:
    docker-node:
+     image: ${DOCKER_HUB_CRED_USR}/${toNodeRepo}:${buildNumber}
      ports:
        - 3004:3004
 

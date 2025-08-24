@@ -1,5 +1,6 @@
 services:
    docker-node:
+     image: ${DOCKER_HUB_CRED_USR}/${toNodeRepo}:${tag}
      ports:
        - 8084:8084    
 
