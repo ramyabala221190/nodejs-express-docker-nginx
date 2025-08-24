@@ -5,6 +5,7 @@ services:
        - 3004:3004
 
    docker-nginx:
+      image: ${DOCKER_HUB_CRED_USR}/${toNginxRepo}:${buildNumber}
       ports:
        - 80:80
   

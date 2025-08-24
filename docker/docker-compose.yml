@@ -14,7 +14,6 @@ services:
 
    docker-nginx:
      container_name: nginx-${targetEnv}-container
-     image: ${DOCKER_HUB_CRED_USR}/${toNginxRepo}:${buildNumber}
      restart: always
      env_file: environment/${targetEnv}.env
      build:
